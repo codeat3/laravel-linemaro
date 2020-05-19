@@ -19,7 +19,7 @@ class LaravelLinemaro
 
     private function getHeaders()
     {
-        $apiKey = Arr::get(config('laravel-linemaro'), 'CODEAT3_LINEMARO_API_KEY');
+        $apiKey = Arr::get(config('laravel-linemaro'), 'API_KEY');
         if (empty($apiKey)) {
             throw new ApiKeyMissingException('Api Key Missing');
         }
