@@ -14,7 +14,7 @@ class LaravelLinemaroServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('laravel-linemaro.php'),
-            ], 'config');
+            ], 'linemaro');
         }
     }
 
