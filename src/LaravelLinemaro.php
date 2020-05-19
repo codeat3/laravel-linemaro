@@ -25,14 +25,15 @@ class LaravelLinemaro
         }
 
         return [
-            'Authorization: Bearer '.$apiKey,
-            'Accept: application/json',
+            'Authorization' => 'Bearer ' . $apiKey,
+            'Accept' => 'application/json',
         ];
     }
 
     // Build your next great package.
     public function random()
     {
-        return json_decode(Zttp::withHeaders($this->getHeaders())->get($this->getApiUrl()), true);
+        $response = Zttp::withHeaders($this->getHeaders())->get($this->getApiUrl());
+        return $response->json();
     }
 }
